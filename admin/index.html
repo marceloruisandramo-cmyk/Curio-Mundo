@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Local de Criação | Curio Mundo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../imagens/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="admin-badge">Ferramenta Estática Local</span>
+        <a href="../index.html" class="btn btn-secondary btn-sm">Ver Site Online</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 860px;">
+        <div style="background-color: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem 2rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+          <span class="section-pretitle">Fluxo de Publicação Estática</span>
+          <h1 style="font-size: 2rem; font-weight: 900; margin: 0.5rem 0 1rem; color: var(--text-main);">
+            Gerador de Conteúdo do Curio Mundo
+          </h1>
+          <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+            Esta ferramenta funciona 100% no seu navegador, sem banco de dados, sem login e sem servidores. Ela gera arquivos HTML semânticos prontos para serem salvos na pasta <code>/artigos/</code> e publicados pelo Cloudflare Pages via GitHub.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+            <a href="novo-artigo.html" class="btn btn-primary" style="padding: 1rem 1.5rem; font-size: 1.1rem; justify-content: flex-start; gap: 0.75rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Criar Novo Artigo com Gerador Automático
+            </a>
+            <a href="modelo-artigo.html" class="btn btn-secondary" style="padding: 1rem 1.5rem; font-size: 1.1rem; justify-content: flex-start; gap: 0.75rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              Ver Modelo HTML em Branco (Template Puro)
+            </a>
+          </div>
+
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;">
+            Passo a Passo Para Adicionar Novos Artigos:
+          </h2>
+          <ol style="padding-left: 1.5rem; color: var(--text-muted); line-height: 1.8; font-size: 0.95rem;">
+            <li>Abra o <a href="novo-artigo.html" style="font-weight: 700;">Gerador de Novo Artigo</a>;</li>
+            <li>Preencha o título, categoria, subtítulo, resumo, conteúdo, curiosidade e fontes;</li>
+            <li>O gerador criará automaticamente o <strong>slug limpo</strong> (ex: <code>por-que-o-ceu-e-azul.html</code>);</li>
+            <li>Clique em <strong>"GERAR ARTIGO HTML"</strong>;</li>
+            <li>Clique em <strong>"Baixar Arquivo HTML"</strong> (o arquivo já é salvo com o nome exato);</li>
+            <li>Mova o arquivo baixado para a pasta correspondente: <code>artigos/&lt;categoria&gt;/</code>;</li>
+            <li>Adicione o artigo à lista do arquivo <code>js/app.js</code> (para a pesquisa do site);</li>
+            <li>Atualize o arquivo <code>sitemap.xml</code> com a nova URL;</li>
+            <li>Faça o <code>commit</code> e <code>push</code> no GitHub;</li>
+            <li>O Cloudflare Pages detecta a alteração e atualiza o site instantaneamente!</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo • Ferramenta de Produção Estática</p>
+      <a href="../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+</body>
+</html>

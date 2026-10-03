@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todas as Curiosidades | Curio Mundo</title>
+  <meta name="description" content="Explore todos os artigos e curiosidades do Curio Mundo: fatos sobre o espaço, biologia animal, civilizações do passado, corpo humano e inovações que mudaram o mundo.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/curiosidades.html">
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- FAIXA DE TOPO EDITORIAL -->
+  <aside class="top-editorial-bar" aria-label="Informações da edição">
+    <div class="container top-editorial-inner">
+      <div class="top-editorial-left">
+        <span class="edition-label">EDIÇÃO DIÁRIA</span>
+        <span class="edition-sep" aria-hidden="true">·</span>
+        <span id="currentDateDisplay">Sexta-feira, 3 de Outubro de 2026</span>
+        <span class="edition-sep" aria-hidden="true">·</span>
+        <span>Índice Completo de Publicações</span>
+      </div>
+      <div>
+        <button type="button" class="top-bar-refresh-btn js-trigger-refresh" title="Atualizar página e carregar novos fatos">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          <span>Atualizar</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="index.html" class="brand-icon-link" aria-label="Curio Mundo - Página Inicial">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Navegação Principal">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="curiosidades.html" class="nav-link active">Curiosidades</a></li>
+            <li><a href="categorias.html" class="nav-link">Categorias</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar no site">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Buscar</span>
+          <span class="kbd-shortcut" aria-hidden="true">/</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="section-header text-center" style="max-width: 700px; margin: 0 auto 2.5rem;">
+          <span class="section-pretitle">Arquivo Geral</span>
+          <h1 class="section-title">Todas as Leituras &amp; Fatos</h1>
+          <p class="section-desc">Filtre por categoria ou navegue pelo compêndio de artigos apurados com fontes científicas e históricas verificadas.</p>
+        </div>
+
+        <!-- Filtros Segmentados de Categoria (Controles Interativos) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.75rem;" id="categoryFilterBar">
+          <button type="button" class="btn btn-sm btn-primary filter-btn active" data-filter="all">Todas (16)</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="historia">História</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="ciencia">Ciência</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="geografia">Geografia</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="animais">Animais</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="corpo-humano">Corpo Humano</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="invencoes">Invenções</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="paises">Países</button>
+          <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="por-que">Por que acontece?</button>
+        </div>
+
+        <!-- Grid de Todos os Artigos -->
+        <div class="articles-grid" id="curiositiesGrid">
+
+          <!-- 1. Cidades Antigas -->
+          <article class="article-card" data-category="historia">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-historia">História</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">6 min de leitura</span>
+              </div>
+              <span class="article-card-date">03/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html">7 cidades antigas que ainda despertam curiosidade</a></h2>
+              <p class="article-card-excerpt">De Çatalhöyük a Petra e Mohenjo-daro, descubra civilizações que desenvolveram engenharia surpreendente há milênios.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 2. Primeiros Sistemas de Escrita -->
+          <article class="article-card" data-category="historia">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-historia">História</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">02/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/historia/como-eram-os-primeiros-sistemas-de-escrita.html">Como eram os primeiros sistemas de escrita?</a></h2>
+              <p class="article-card-excerpt">Como a humanidade passou de fichas de argila para a escrita cuneiforme na Suméria e os hieróglifos egípcios.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/historia/como-eram-os-primeiros-sistemas-de-escrita.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 3. Por que o céu é azul -->
+          <article class="article-card" data-category="ciencia">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-ciencia">Ciência</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">4 min de leitura</span>
+              </div>
+              <span class="article-card-date">03/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/ciencia/por-que-o-ceu-e-azul.html">Por que o céu é azul?</a></h2>
+              <p class="article-card-excerpt">A explicação física do Espalhamento de Rayleigh: como as moléculas da atmosfera espalham a luz solar.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/ciencia/por-que-o-ceu-e-azul.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 4. Se a Lua desaparecesse -->
+          <article class="article-card" data-category="ciencia">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-ciencia">Ciência</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">01/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/ciencia/o-que-aconteceria-se-a-lua-desaparecesse.html">O que aconteceria se a Lua desaparecesse?</a></h2>
+              <p class="article-card-excerpt">O impacto dramático nas marés oceânicas, na inclinação do eixo da Terra e no equilíbrio dos ecossistemas biológicos.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/ciencia/o-que-aconteceria-se-a-lua-desaparecesse.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 5. Lugares Extremos -->
+          <article class="article-card" data-category="geografia">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-geografia">Geografia</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">6 min de leitura</span>
+              </div>
+              <span class="article-card-date">02/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/geografia/os-lugares-mais-extremos-do-planeta.html">Os lugares mais extremos do planeta</a></h2>
+              <p class="article-card-excerpt">Do deserto mais seco de Atacama à depressão mais profunda da Fossa das Marianas e o calor do Vale da Morte.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/geografia/os-lugares-mais-extremos-do-planeta.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 6. Fusos Horários -->
+          <article class="article-card" data-category="geografia">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-geografia">Geografia</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">4 min de leitura</span>
+              </div>
+              <span class="article-card-date">30/09/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/geografia/por-que-existem-tantos-fusos-horarios.html">Por que existem tantos fusos horários?</a></h2>
+              <p class="article-card-excerpt">A rotação da Terra e a história da Conferência Internacional do Meridiano de 1884 que padronizou a medição global do tempo.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/geografia/por-que-existem-tantos-fusos-horarios.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 7. Polvos -->
+          <article class="article-card" data-category="animais">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-animais">Animais</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">03/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html">10 curiosidades surpreendentes sobre os polvos</a></h2>
+              <p class="article-card-excerpt">Três corações, sangue azul à base de cobre e dois terços dos neurônios espalhados pelos seus oito braços.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 8. Animais em Ambientes Extremos -->
+          <article class="article-card" data-category="animais">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-animais">Animais</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">29/09/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/animais/como-alguns-animais-conseguem-sobreviver-em-ambientes-extremos.html">Como alguns animais conseguem sobreviver em ambientes extremos?</a></h2>
+              <p class="article-card-excerpt">Extremófilos da natureza: dos tardígrados microscópicos aos peixes com proteínas anticongelantes na Antártida.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/animais/como-alguns-animais-conseguem-sobreviver-em-ambientes-extremos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 9. Bocejos -->
+          <article class="article-card" data-category="corpo-humano">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-corpo">Corpo Humano</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">4 min de leitura</span>
+              </div>
+              <span class="article-card-date">02/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/corpo-humano/por-que-bocejamos.html">Por que bocejamos?</a></h2>
+              <p class="article-card-excerpt">A hipótese do resfriamento térmico cerebral e o curioso fenômeno do contágio social mediado pela empatia.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/corpo-humano/por-que-bocejamos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 10. Impressões Digitais -->
+          <article class="article-card" data-category="corpo-humano">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-corpo">Corpo Humano</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">4 min de leitura</span>
+              </div>
+              <span class="article-card-date">28/09/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/corpo-humano/por-que-temos-impressoes-digitais.html">Por que temos impressões digitais?</a></h2>
+              <p class="article-card-excerpt">Os dermatoglifos aumentam a aderência ao segurar objetos e amplificam a percepção sensorial de vibrações táteis.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/corpo-humano/por-que-temos-impressoes-digitais.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 11. Primeiro Telefone -->
+          <article class="article-card" data-category="invencoes">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-invencoes">Invenções</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">01/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/invencoes/como-surgiu-o-primeiro-telefone.html">Como surgiu o primeiro telefone?</a></h2>
+              <p class="article-card-excerpt">A disputa histórica entre Alexander Graham Bell, Elisha Gray e o italiano Antonio Meucci no século XIX.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/invencoes/como-surgiu-o-primeiro-telefone.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 12. 10 Invenções -->
+          <article class="article-card" data-category="invencoes">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-invencoes">Invenções</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">6 min de leitura</span>
+              </div>
+              <span class="article-card-date">27/09/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/invencoes/10-invencoes-que-mudaram-o-mundo.html">10 invenções que mudaram a vida cotidiana</a></h2>
+              <p class="article-card-excerpt">Da imprensa móvel de Gutenberg à refrigeração doméstica e o sabão: invenções que transformaram a sociedade.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/invencoes/10-invencoes-que-mudaram-o-mundo.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 13. Japão -->
+          <article class="article-card" data-category="paises">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-paises">Países</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">02/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html">Curiosidades sobre o Japão que talvez você não conheça</a></h2>
+              <p class="article-card-excerpt">Pontualidade milimétrica nos trens-bala, mais de 4 milhões de máquinas de venda e empresas milenares.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 14. Moçambique -->
+          <article class="article-card" data-category="paises">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-paises">Países</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">5 min de leitura</span>
+              </div>
+              <span class="article-card-date">01/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/paises/fatos-interessantes-sobre-mocambique.html">Fatos interessantes sobre Moçambique</a></h2>
+              <p class="article-card-excerpt">Mais de 2.500 km de litoral no Índico, o lendário Parque Nacional da Gorongosa e o refúgio dos dugongos em Bazaruto.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/paises/fatos-interessantes-sobre-mocambique.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 15. Arrepios -->
+          <article class="article-card" data-category="por-que">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-porque">Por Que Acontece?</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">4 min de leitura</span>
+              </div>
+              <span class="article-card-date">03/10/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/por-que/por-que-sentimos-arrepios.html">Por que sentimos arrepios?</a></h2>
+              <p class="article-card-excerpt">O reflexo vestigial da piloereção: por que os pequenos músculos eretores dos pelos se contraem com frio ou emoção.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/por-que/por-que-sentimos-arrepios.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 16. Gelo Flutua -->
+          <article class="article-card" data-category="por-que">
+            <div class="article-card-header">
+              <div class="meta-unboxed">
+                <span class="kicker color-porque">Por Que Acontece?</span>
+                <span class="separator" aria-hidden="true">·</span>
+                <span class="time">4 min de leitura</span>
+              </div>
+              <span class="article-card-date">29/09/2026</span>
+            </div>
+            <div class="article-card-body">
+              <h2 class="article-card-title"><a href="artigos/por-que/por-que-o-gelo-flutua-na-agua.html">Por que o gelo flutua na água?</a></h2>
+              <p class="article-card-excerpt">A anomalia térmica da água: por que a estrutura cristalina hexagonal do gelo o torna menos denso que o líquido.</p>
+            </div>
+            <div class="article-card-footer">
+              <span style="font-size: 0.75rem; color: var(--text-light);">Redação Curio Mundo</span>
+              <a href="artigos/por-que/por-que-o-gelo-flutua-na-agua.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script simples de filtro local -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.article-card');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          buttons.forEach(b => {
+            b.classList.remove('btn-primary', 'active');
+            b.classList.add('btn-secondary');
+          });
+          btn.classList.remove('btn-secondary');
+          btn.classList.add('btn-primary', 'active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="imagens/logo.svg" alt="Curio Mundo" style="height: 38px; margin-bottom: 1.25rem; filter: brightness(0) invert(1);">
+          <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 1rem;">
+            Revista digital dedicada a curiosidades, ciência, história, geografia e fatos fascinantes sobre o planeta Terra.
+          </p>
+          <p style="font-size: 0.85rem; color: #71717a; font-style: italic;">
+            "Descubra algo novo todos os dias."
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Categorias</h4>
+          <ul class="footer-links">
+            <li><a href="artigos/ciencia/por-que-o-ceu-e-azul.html">Ciência</a></li>
+            <li><a href="artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html">História</a></li>
+            <li><a href="artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html">Animais</a></li>
+            <li><a href="artigos/geografia/os-lugares-mais-extremos-do-planeta.html">Geografia</a></li>
+            <li><a href="artigos/por-que/por-que-sentimos-arrepios.html">Por que acontece?</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="curiosidades.html">Todas as Curiosidades</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Ferramentas</h4>
+          <ul class="footer-links">
+            <li><a href="admin/index.html">Painel de Criação</a></li>
+            <li><a href="admin/novo-artigo.html">Gerador de Artigos</a></li>
+            <li><a href="sitemap.xml">Mapa do Site</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-card">
+        <strong>Aviso:</strong> Este site tem finalidade educativa e informativa. As informações são apresentadas para fins de conhecimento geral. Sempre que possível, são indicadas fontes e referências confiáveis. As informações relacionadas ao corpo humano têm finalidade exclusivamente educativa e não substituem orientação médica profissional.
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Curio Mundo. Todos os direitos reservados.</p>
+        <p>Site 100% estático • Rápido, leve e acessível</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

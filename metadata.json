@@ -1,0 +1,6 @@
+{
+  "name": "Curio Mundo",
+  "description": "Revista digital de curiosidades, ciência, história, geografia, corpo humano, animais, invenções e fatos fascinantes sobre o mundo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

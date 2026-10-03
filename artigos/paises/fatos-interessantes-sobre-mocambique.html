@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatos interessantes sobre Moçambique | Curio Mundo</title>
+  <meta name="description" content="Descubra a rica geografia e cultura de Moçambique: mais de 2.500 km de litoral no Índico, a restauração da Gorongosa e o refúgio dos raros dugongos em Bazaruto.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/artigos/paises/fatos-interessantes-sobre-mocambique.html">
+  <link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+            <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span style="display: none; @media(min-width:480px){display:inline;}">Pesquisar</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../../curiosidades.html" class="nav-link">Curiosidades</a></li>
+          <li><a href="../../categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="../historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="nav-link">História</a></li>
+          <li><a href="../ciencia/por-que-o-ceu-e-azul.html" class="nav-link">Ciência</a></li>
+          <li><a href="../geografia/os-lugares-mais-extremos-do-planeta.html" class="nav-link">Geografia</a></li>
+          <li><a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="nav-link">Animais</a></li>
+          <li><a href="../corpo-humano/por-que-bocejamos.html" class="nav-link">Corpo Humano</a></li>
+          <li><a href="../invencoes/10-invencoes-que-mudaram-o-mundo.html" class="nav-link">Invenções</a></li>
+          <li><a href="fatos-interessantes-sobre-mocambique.html" class="nav-link active">Países</a></li>
+          <li><a href="../por-que/por-que-sentimos-arrepios.html" class="nav-link">Por que isso acontece?</a></li>
+          <li><a href="../../sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container" style="max-width: 760px;">
+          <div class="article-breadcrumbs">
+            <a href="../../index.html">Início</a> / <a href="../../curiosidades.html">Curiosidades</a> / <a href="../../categorias.html">Países</a>
+          </div>
+          <div class="article-meta-top">
+            <span class="badge badge-paises">Países</span>
+            <time datetime="2026-10-01">01 de outubro de 2026</time>
+            <span>• 5 min de leitura</span>
+          </div>
+          <h1 class="article-title">Fatos interessantes sobre Moçambique</h1>
+          <p class="article-subtitle">Banhado pelas águas mornas e turquesas do Canal de Moçambique, este país do sudeste africano abriga uma biodiversidade monumental e um patrimônio histórico único no continente.</p>
+          <div class="article-author-bar">
+            <span>Por <strong>Redação Curio Mundo</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-layout">
+        <div class="article-content">
+          <p>
+            Com mais de 2.500 quilômetros de litoral voltado para o Oceano Índico, a República de Moçambique é uma nação vibrante com uma história de trocas comerciais milenares entre povos bantu, navegadores árabes, persas, indianos e europeus.
+          </p>
+
+          <!-- BOX VOCÊ SABIA -->
+          <div class="callout-box">
+            <div class="callout-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Você sabia?
+            </div>
+            <p class="callout-text">
+              As águas cristalinas do Arquipélago de Bazaruto, ao largo da costa de Inhambane em Moçambique, abrigam a última população viável e saudável de <strong>dugongos</strong> (raros mamíferos marinhos parentes do peixe-boi que deram origem à lenda das sereias) em toda a costa oriental da África!
+            </p>
+          </div>
+
+          <h2>1. Parque Nacional da Gorongosa: o maior milagre ecológico</h2>
+          <p>
+            Situado no coração de Moçambique, na terminação sul do Grande Vale do Rifte Africano, o Parque Nacional da Gorongosa foi outrora apelidado de "o local onde Noé deixou a sua arca".
+          </p>
+          <p>
+            Após décadas difíceis de conflito armado que quase dizimaram as populações de grandes animais, o parque tornou-se um dos maiores e mais premiados projetos de restauração ecológica e inclusão comunitária do mundo. Hoje, populações de leões, elefantes, hipopótamos e antílopes raros voltam a prosperar em equilíbrio.
+          </p>
+
+          <h2>2. A Ilha de Moçambique e a arquitetura de coral</h2>
+          <p>
+            Declarada Patrimônio Mundial da Humanidade pela UNESCO em 1991, a histórica Ilha de Moçambique, no norte da província de Nampula, foi a primeira capital do país.
+          </p>
+          <p>
+            A cidade insular é famosa pela Fortaleza de São Sebastião (a fortaleza colonial mais antiga ainda de pé na África subsaariana) e por suas casas coloniais construídas com calcário de coral fossilizado e cal vegetal, combinando tradições arquitetônicas swahilis, portuguesas e indianas.
+          </p>
+
+          <h2>3. O Lago Niassa: aquário de água doce do planeta</h2>
+          <p>
+            No noroeste do território moçambicano encontra-se o majestoso Lago Niassa (conhecido internacionalmente como Lago Malawi). É o terceiro maior e segundo mais profundo lago da África, com águas transparentes que descem a mais de 700 metros.
+          </p>
+          <p>
+            Biólogos consideram o Niassa um laboratório vivo da evolução: ele abriga mais de 1.000 espécies de peixes ciclídeos, quase todos endêmicos (não encontrados em nenhum outro lugar do mundo), um recorde superior ao de todas as espécies de água doce da Europa combinadas!
+          </p>
+
+          <h2>4. Uma bandeira cheia de simbolismo</h2>
+          <p>
+            A bandeira nacional de Moçambique destaca-se pela sua originalidade e significado explícito: sobre uma estrela dourada repousa um <strong>livro aberto</strong> (representando a educação e o conhecimento), cruzado por uma <strong>enxada</strong> (o trabalho agrícola e a subsistência do povo) e um fuzil estilizado (a defesa da soberania conquistada na independência em 1975).
+          </p>
+
+          <section class="sources-section">
+            <h3 class="sources-title">Fontes e referências consultadas:</h3>
+            <ul class="sources-list">
+              <li><strong>UNESCO World Heritage Centre:</strong> "Island of Mozambique" - Cultural Heritage Documentation.</li>
+              <li><strong>Gorongosa Project Scientific Department:</strong> Biodiversity Surveys and Ecosystem Restoration Reports.</li>
+              <li><strong>IUCN (International Union for Conservation of Nature):</strong> Dugong Status and Marine Conservation in the Western Indian Ocean.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTIGOS RELACIONADOS -->
+    <section class="related-section">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem;">Você também pode gostar de descobrir:</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-paises">Países</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html">Curiosidades sobre o Japão</a></h3>
+              <p class="article-card-excerpt">A precisão do Shinkansen e a empresa mais antiga do mundo.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-animais">Animais</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../animais/como-alguns-animais-conseguem-sobreviver-em-ambientes-extremos.html">Animais em ambientes extremos</a></h3>
+              <p class="article-card-excerpt">Adaptações extremófilas extraordinárias no reino animal.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../animais/como-alguns-animais-conseguem-sobreviver-em-ambientes-extremos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-geografia">Geografia</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../geografia/os-lugares-mais-extremos-do-planeta.html">Lugares extremos da Terra</a></h3>
+              <p class="article-card-excerpt">Do deserto do Atacama às profundezas da Fossa das Marianas.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../geografia/os-lugares-mais-extremos-do-planeta.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo. Descubra algo novo todos os dias.</p>
+      <a href="../../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Novo Artigo | Curio Mundo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../imagens/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">Painel</a>
+        <a href="../index.html" class="btn btn-primary btn-sm">Ver Site</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+          <span class="admin-badge">100% Navegador • Sem Servidor</span>
+          <h1 style="font-size: 1.85rem; font-weight: 900; margin: 0.5rem 0 1rem;">Gerador de Artigo Estático</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">
+            Preencha os campos abaixo. O gerador criará automaticamente o <strong>slug limpo</strong>, montará o código HTML pronto com a semântica do Curio Mundo e permitirá que você baixe o arquivo <code>.html</code> imediatamente.
+          </p>
+
+          <form id="articleGeneratorForm">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+
+              <!-- Título & Slug -->
+              <div class="admin-form-group">
+                <label class="admin-label" for="artTitle">Título do Artigo *</label>
+                <input type="text" id="artTitle" class="admin-input" placeholder="Ex: Por que o céu é azul?" required>
+                <div class="admin-slug-preview">
+                  Arquivo gerado: <strong id="slugOutput">novo-artigo.html</strong>
+                </div>
+              </div>
+
+              <!-- Categoria & Autor -->
+              <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; @media(min-width:600px){grid-template-columns: 1fr 1fr;}">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="artCategory">Categoria *</label>
+                  <select id="artCategory" class="admin-select" required>
+                    <option value="historia">História</option>
+                    <option value="ciencia" selected>Ciência</option>
+                    <option value="geografia">Geografia</option>
+                    <option value="animais">Animais</option>
+                    <option value="corpo-humano">Corpo Humano</option>
+                    <option value="invencoes">Invenções</option>
+                    <option value="paises">Países</option>
+                    <option value="por-que">Por que isso acontece?</option>
+                  </select>
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label" for="artAuthor">Autor / Equipe</label>
+                  <input type="text" id="artAuthor" class="admin-input" value="Redação Curio Mundo">
+                </div>
+              </div>
+
+              <!-- Subtítulo -->
+              <div class="admin-form-group">
+                <label class="admin-label" for="artSubtitle">Subtítulo Explicativo *</label>
+                <input type="text" id="artSubtitle" class="admin-input" placeholder="Ex: Entenda o Espalhamento de Rayleigh e como a atmosfera dispersa a luz solar." required>
+              </div>
+
+              <!-- Meta Description / Resumo -->
+              <div class="admin-form-group">
+                <label class="admin-label" for="artSummary">Resumo (Meta Description para SEO) *</label>
+                <textarea id="artSummary" class="admin-textarea" style="min-height: 70px;" placeholder="Resumo factual de até 160 caracteres sobre a curiosidade." required></textarea>
+              </div>
+
+              <!-- Curiosidade "Você Sabia?" -->
+              <div class="admin-form-group">
+                <label class="admin-label" for="artCallout">Curiosidade em Destaque ("Você Sabia?")</label>
+                <textarea id="artCallout" class="admin-textarea" style="min-height: 70px;" placeholder="Ex: Em Marte, o céu durante o dia parece amarelado ou rosado devido à poeira de óxido de ferro suspensa na atmosfera!"></textarea>
+              </div>
+
+              <!-- Conteúdo Principal -->
+              <div class="admin-form-group">
+                <label class="admin-label" for="artContent">Conteúdo Principal (Separe parágrafos com linha em branco ou use tags HTML como &lt;h2&gt; e &lt;p&gt;) *</label>
+                <textarea id="artContent" class="admin-textarea" style="min-height: 220px;" placeholder="Escreva o texto do artigo. Subtítulos podem ser escritos como ## Subtítulo ou <h2>Subtítulo</h2>." required></textarea>
+              </div>
+
+              <!-- Fontes -->
+              <div class="admin-form-group">
+                <label class="admin-label" for="artSources">Fontes e Referências (Uma por linha)</label>
+                <textarea id="artSources" class="admin-textarea" style="min-height: 80px;" placeholder="NASA Goddard Space Flight Center - Atmospheric Physics&#10;Smithsonian National Air and Space Museum"></textarea>
+              </div>
+
+            </div>
+
+            <!-- Botões de Ação -->
+            <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              <button type="submit" class="btn btn-primary" id="btnGenerate">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                GERAR ARTIGO HTML
+              </button>
+              <button type="button" class="btn btn-secondary" id="btnFillDemo">Preencher Exemplo</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Área de Saída do Código Gerado -->
+        <div id="outputContainer" style="display: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); margin-bottom: 3rem;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <h2 style="font-size: 1.3rem; font-weight: 800;">Artigo Gerado com Sucesso!</h2>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">
+                Nome do arquivo: <strong id="outputFileName" style="color: var(--primary);">artigo.html</strong>
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button type="button" class="btn btn-accent btn-sm" id="btnDownload">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Baixar Arquivo HTML (.html)
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btnCopy">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span id="copyBtnText">Copiar Código</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-output-box">
+            <pre><code id="generatedCode"></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo • Ferramenta de Criação Estática</p>
+      <a href="index.html" style="color: var(--primary);">Voltar ao Painel</a>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script>
+    (function () {
+      const titleInput = document.getElementById('artTitle');
+      const slugOutput = document.getElementById('slugOutput');
+      const categorySelect = document.getElementById('artCategory');
+      const form = document.getElementById('articleGeneratorForm');
+      const outputContainer = document.getElementById('outputContainer');
+      const outputFileName = document.getElementById('outputFileName');
+      const generatedCode = document.getElementById('generatedCode');
+      const btnDownload = document.getElementById('btnDownload');
+      const btnCopy = document.getElementById('btnCopy');
+      const copyBtnText = document.getElementById('copyBtnText');
+      const btnFillDemo = document.getElementById('btnFillDemo');
+
+      let currentSlug = 'novo-artigo';
+      let currentHTML = '';
+
+      function getCategoryLabel(val) {
+        const map = {
+          'historia': 'História',
+          'ciencia': 'Ciência',
+          'geografia': 'Geografia',
+          'animais': 'Animais',
+          'corpo-humano': 'Corpo Humano',
+          'invencoes': 'Invenções',
+          'paises': 'Países',
+          'por-que': 'Por que isso acontece?'
+        };
+        return map[val] || 'Curiosidades';
+      }
+
+      function updateSlug() {
+        const title = titleInput.value.trim();
+        if (!title) {
+          currentSlug = 'novo-artigo';
+        } else {
+          currentSlug = window.CurioMundo.slugify(title);
+        }
+        const cat = categorySelect.value;
+        slugOutput.textContent = `artigos/${cat}/${currentSlug}.html`;
+      }
+
+      titleInput.addEventListener('input', updateSlug);
+      categorySelect.addEventListener('change', updateSlug);
+
+      btnFillDemo.addEventListener('click', function() {
+        titleInput.value = 'Por que o som não se propaga no espaço?';
+        document.getElementById('artSubtitle').value = 'A física das ondas mecânicas e a ausência de matéria no vácuo espacial.';
+        categorySelect.value = 'ciencia';
+        document.getElementById('artSummary').value = 'Entenda por que filmes de ficção científica com explosões barulhentas no espaço estão cientificamente errados.';
+        document.getElementById('artCallout').value = 'Embora o som não se propague no vácuo, ondas eletromagnéticas (como a luz e as ondas de rádio) viajam livremente pelo espaço sem precisar de matéria!';
+        document.getElementById('artContent').value = `Ao contrário do que vemos em clássicos de ficção científica com estrondosas explosões estelares, o espaço cósmico é na realidade um lugar de silêncio absoluto.
+
+## O Que É o Som?
+Para entender por que não há som no vácuo, precisamos primeiro lembrar o que é uma onda sonora. O som é uma onda mecânica gerada pela vibração de matéria. Quando você fala, suas cordas vocais empurram as moléculas de ar ao redor, criando zonas de compressão e descompressão que chegam aos tímpanos de quem ouve.
+
+Na Terra, o som viaja através do ar a cerca de 343 metros por segundo. Ele também viaja através da água (cerca de 1.480 m/s) e de sólidos como o ferro (mais de 5.000 m/s), onde as partículas estão ainda mais próximas.
+
+## A Realidade do Vácuo Espacial
+No espaço interestelar, a densidade de átomos é tão ínfima que é considerada um vácuo quase perfeito. Não existem moléculas suficientes para que a vibração seja transferida de uma partícula para a seguinte. Sem meio material, a onda mecânica simplesmente não tem por onde se propagar.`;
+        document.getElementById('artSources').value = `NASA - Educational Physics Resources: Sound and Vacuum\nEuropean Space Agency (ESA) - Space Science Explained`;
+        updateSlug();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        updateSlug();
+
+        const title = titleInput.value.trim();
+        const subtitle = document.getElementById('artSubtitle').value.trim();
+        const catValue = categorySelect.value;
+        const catLabel = getCategoryLabel(catValue);
+        const author = document.getElementById('artAuthor').value.trim() || 'Redação Curio Mundo';
+        const summary = document.getElementById('artSummary').value.trim();
+        const callout = document.getElementById('artCallout').value.trim();
+        const rawContent = document.getElementById('artContent').value.trim();
+        const rawSources = document.getElementById('artSources').value.trim();
+
+        // Processar parágrafos e subtítulos simples
+        const paragraphs = rawContent.split(/\n\s*\n/).map(block => {
+          block = block.trim();
+          if (block.startsWith('## ')) {
+            return `          <h2>${block.replace('## ', '')}</h2>`;
+          } else if (block.startsWith('<h3>') || block.startsWith('<h2>') || block.startsWith('<p>')) {
+            return `          ${block}`;
+          }
+          return `          <p>${block}</p>`;
+        }).join('\n\n');
+
+        // Processar fontes
+        let sourcesHTML = '';
+        if (rawSources) {
+          const lines = rawSources.split('\n').filter(l => l.trim().length > 0);
+          sourcesHTML = `
+          <section class="sources-section">
+            <h3 class="sources-title">Fontes e referências consultadas:</h3>
+            <ul class="sources-list">
+${lines.map(line => `              <li><strong>Fonte:</strong> ${line.trim()}</li>`).join('\n')}
+            </ul>
+          </section>`;
+        }
+
+        // Callout box
+        let calloutHTML = '';
+        if (callout) {
+          calloutHTML = `
+          <div class="callout-box">
+            <div class="callout-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Você sabia?
+            </div>
+            <p class="callout-text">${callout}</p>
+          </div>
+`;
+        }
+
+        const isCorpo = catValue === 'corpo-humano';
+        const healthNotice = isCorpo ? `
+          <div class="health-disclaimer">
+            <strong>Nota Educativa:</strong> As informações sobre o corpo humano neste artigo têm finalidade estritamente cultural e educativa, não devendo ser utilizadas como diagnóstico ou orientação médica.
+          </div>
+` : '';
+
+        currentHTML = `<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title} | Curio Mundo</title>
+  <meta name="description" content="${summary}">
+  <link rel="canonical" href="https://curiomundo.pages.dev/artigos/${catValue}/${currentSlug}.html">
+  <link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand-link" aria-label="Curio Mundo Início">
+        <img src="../../imagens/logo.svg" alt="Curio Mundo" class="brand-logo-img" width="220" height="48">
+      </a>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span style="display: none; @media(min-width:480px){display:inline;}">Pesquisar</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../../curiosidades.html" class="nav-link">Curiosidades</a></li>
+          <li><a href="../../categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="../../artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="nav-link">História</a></li>
+          <li><a href="../../artigos/ciencia/por-que-o-ceu-e-azul.html" class="nav-link">Ciência</a></li>
+          <li><a href="../../artigos/geografia/os-lugares-mais-extremos-do-planeta.html" class="nav-link">Geografia</a></li>
+          <li><a href="../../artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="nav-link">Animais</a></li>
+          <li><a href="../../artigos/corpo-humano/por-que-bocejamos.html" class="nav-link">Corpo Humano</a></li>
+          <li><a href="../../artigos/invencoes/10-invencoes-que-mudaram-o-mundo.html" class="nav-link">Invenções</a></li>
+          <li><a href="../../artigos/paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="nav-link">Países</a></li>
+          <li><a href="../../artigos/por-que/por-que-sentimos-arrepios.html" class="nav-link">Por que isso acontece?</a></li>
+          <li><a href="../../sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container" style="max-width: 760px;">
+          <div class="article-breadcrumbs">
+            <a href="../../index.html">Início</a> / <a href="../../curiosidades.html">Curiosidades</a> / <span>${catLabel}</span>
+          </div>
+          <div class="article-meta-top">
+            <span class="badge badge-${catValue}">${catLabel}</span>
+            <time datetime="2026-10-03">03/10/2026</time>
+            <span>• 5 min de leitura</span>
+          </div>
+          <h1 class="article-title">${title}</h1>
+          <p class="article-subtitle">${subtitle}</p>
+          <div class="article-author-bar">
+            <span>Por <strong>${author}</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-layout">
+        <div class="article-content">
+${paragraphs}
+
+${calloutHTML}
+${healthNotice}
+${sourcesHTML}
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTIGOS RELACIONADOS -->
+    <section class="related-section">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem;">Você também pode gostar de descobrir:</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-ciencia">Ciência</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../ciencia/por-que-o-ceu-e-azul.html">Por que o céu é azul?</a></h3>
+              <p class="article-card-excerpt">A física do espalhamento de luz solar na atmosfera da Terra.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../ciencia/por-que-o-ceu-e-azul.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-animais">Animais</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html">10 curiosidades sobre os polvos</a></h3>
+              <p class="article-card-excerpt">Três corações, sangue azul e inteligência sem igual.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-porque">Por que isso acontece?</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../por-que/por-que-o-gelo-flutua-na-agua.html">Por que o gelo flutua na água?</a></h3>
+              <p class="article-card-excerpt">Como a estrutura molecular da água sólida preserva a vida aquática.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../por-que/por-que-o-gelo-flutua-na-agua.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo. Descubra algo novo todos os dias.</p>
+      <a href="../../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>`;
+
+        generatedCode.textContent = currentHTML;
+        outputFileName.textContent = `${currentSlug}.html`;
+        outputContainer.style.display = 'block';
+        outputContainer.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Baixar arquivo HTML
+      btnDownload.addEventListener('click', function () {
+        if (!currentHTML) return;
+        const blob = new Blob([currentHTML], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${currentSlug}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      // Copiar código
+      btnCopy.addEventListener('click', function () {
+        if (!currentHTML) return;
+        navigator.clipboard.writeText(currentHTML).then(() => {
+          copyBtnText.textContent = 'Copiado com Sucesso!';
+          btnCopy.style.backgroundColor = '#dcfce7';
+          btnCopy.style.borderColor = '#86efac';
+          setTimeout(() => {
+            copyBtnText.textContent = 'Copiar Código';
+            btnCopy.style.backgroundColor = '';
+            btnCopy.style.borderColor = '';
+          }, 2000);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todas as Categorias | Curio Mundo</title>
+  <meta name="description" content="Explore as 8 grandes áreas do conhecimento no Curio Mundo: História, Ciência, Geografia, Animais, Corpo Humano, Invenções, Países e Por Que Isso Acontece.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/categorias.html">
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- FAIXA DE TOPO EDITORIAL -->
+  <aside class="top-editorial-bar" aria-label="Informações da edição">
+    <div class="container top-editorial-inner">
+      <div class="top-editorial-left">
+        <span class="edition-label">EDIÇÃO DIÁRIA</span>
+        <span class="edition-sep" aria-hidden="true">·</span>
+        <span id="currentDateDisplay">Sexta-feira, 3 de Outubro de 2026</span>
+        <span class="edition-sep" aria-hidden="true">·</span>
+        <span>Atlas Temático de Disciplinas</span>
+      </div>
+      <div>
+        <button type="button" class="top-bar-refresh-btn js-trigger-refresh" title="Atualizar página e carregar novos fatos">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          <span>Atualizar</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="index.html" class="brand-icon-link" aria-label="Curio Mundo - Página Inicial">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Navegação Principal">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="curiosidades.html" class="nav-link">Curiosidades</a></li>
+            <li><a href="categorias.html" class="nav-link active">Categorias</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar no site">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Buscar</span>
+          <span class="kbd-shortcut" aria-hidden="true">/</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="section-header text-center" style="max-width: 680px; margin: 0 auto 3.5rem;">
+          <span class="section-pretitle">Atlas do Conhecimento</span>
+          <h1 class="section-title">As 8 Grandes Disciplinas</h1>
+          <p class="section-desc">Mergulhe em arquivos temáticos cuidadosamente catalogados com dados rigorosamente fundamentados e ilustrações dedicadas.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 960px; margin: 0 auto;">
+
+          <!-- 1. História -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/historia.webp" alt="Ilustração da categoria História: civilizações antigas e monumentos" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-historia">História &amp; Civilizações</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Civilizações, Arqueologia e o Passado</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Acontecimentos marcantes, origens de tradições milenares, sistemas primitivos de escrita e monumentos antigos que desafiam a engenharia contemporânea.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; 7 cidades antigas que ainda despertam curiosidade</a>
+                  <a href="artigos/historia/como-eram-os-primeiros-sistemas-de-escrita.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Como eram os primeiros sistemas de escrita?</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Ciência -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/ciencia.webp" alt="Ilustração da categoria Ciência: física, astronomia e luz solar" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-ciencia">Ciência &amp; Física</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Física, Astronomia e Fenômenos Naturais</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Como a matéria, a luz e o cosmos se comportam. Da ótica atmosférica do Espalhamento de Rayleigh aos efeitos gravitacionais da órbita lunar na vida terrestre.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/ciencia/por-que-o-ceu-e-azul.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Por que o céu é azul?</a>
+                  <a href="artigos/ciencia/o-que-aconteceria-se-a-lua-desaparecesse.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; O que aconteceria se a Lua desaparecesse?</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Geografia -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/geografia.webp" alt="Ilustração da categoria Geografia: paisagens e relevo terrestre" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-geografia">Geografia &amp; Extremos</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Paisagens, Extremos e Divisões da Terra</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Desertos sem chuva há décadas, as fossas abissais do oceano Pacífico e a engrenagem histórica dos fusos horários criada no século XIX.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/geografia/os-lugares-mais-extremos-do-planeta.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Os lugares mais extremos do planeta</a>
+                  <a href="artigos/geografia/por-que-existem-tantos-fusos-horarios.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Por que existem tantos fusos horários?</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Animais -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/animais.webp" alt="Ilustração da categoria Animais: polvos e vida selvagem" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-animais">Animais &amp; Biologia</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Comportamento e Sobrevivência Animal</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Criaturas marinhas dotadas de três corações e sangue azul, até tardígrados microscópicos capazes de suportar o vácuo gelado do espaço sideral.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; 10 curiosidades surpreendentes sobre os polvos</a>
+                  <a href="artigos/animais/como-alguns-animais-conseguem-sobreviver-em-ambientes-extremos.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Como alguns animais conseguem sobreviver em ambientes extremos?</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Corpo Humano -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/corpo-humano.webp" alt="Ilustração da categoria Corpo Humano: biologia, sentidos e cérebro" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-corpo">Corpo Humano &amp; Anatomia</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">A Máquina Biológica e seus Sentidos</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Por que bocejamos para resfriar a temperatura neural e a mecânica das impressões digitais na amplificação do tato humano.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/corpo-humano/por-que-bocejamos.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Por que bocejamos?</a>
+                  <a href="artigos/corpo-humano/por-que-temos-impressoes-digitais.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Por que temos impressões digitais?</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Invenções -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/invencoes.webp" alt="Ilustração da categoria Invenções: criações e tecnologia antiga" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-invencoes">Invenções &amp; Engenho</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Engenho Humano e Transformação Social</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  As disputas de patentes da transmissão de voz e as inovações que duplicaram a expectativa de vida global ao longo dos séculos.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/invencoes/como-surgiu-o-primeiro-telefone.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Como surgiu o primeiro telefone?</a>
+                  <a href="artigos/invencoes/10-invencoes-que-mudaram-o-mundo.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; 10 invenções que mudaram a vida cotidiana</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Países -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/paises.webp" alt="Ilustração da categoria Países: culturas, Japão e África" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-paises">Países &amp; Culturas</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Culturas, Nações e Curiosidades Globais</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  A precisão milimétrica dos transportes no Japão e a rica biodiversidade e renascimento ecológico de Moçambique no Índico.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Curiosidades sobre o Japão que talvez você não conheça</a>
+                  <a href="artigos/paises/fatos-interessantes-sobre-mocambique.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Fatos interessantes sobre Moçambique</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Por que isso acontece? -->
+          <article class="cat-detail-card">
+            <div class="cat-detail-header-flex">
+              <img src="imagens/por-que.webp" alt="Ilustração da categoria Por Que Isso Acontece?: fenômenos cotidianos" class="cat-detail-thumb" width="400" height="300" loading="lazy" decoding="async">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span class="cat-card-kicker color-porque">Por Que Acontece?</span>
+                  <span style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">2 Artigos Catalogados</span>
+                </div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Perguntas Curiosas do Dia a Dia</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                  A anomalia da densidade que faz o gelo flutuar na água e a piloereção involuntária que arrepia a pele diante do frio ou da emoção.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                  <a href="artigos/por-que/por-que-sentimos-arrepios.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Por que sentimos arrepios?</a>
+                  <a href="artigos/por-que/por-que-o-gelo-flutua-na-agua.html" style="font-weight: 600; font-size: 0.95rem;">&rarr; Por que o gelo flutua na água?</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="imagens/logo.svg" alt="Curio Mundo" style="height: 38px; margin-bottom: 1.25rem; filter: brightness(0) invert(1);">
+          <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 1rem;">
+            Revista digital dedicada a curiosidades, ciência, história, geografia e fatos fascinantes sobre o planeta Terra.
+          </p>
+          <p style="font-size: 0.85rem; color: #71717a; font-style: italic;">
+            "Descubra algo novo todos os dias."
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Coleções</h4>
+          <ul class="footer-links">
+            <li><a href="artigos/ciencia/por-que-o-ceu-e-azul.html">Ciência</a></li>
+            <li><a href="artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html">História</a></li>
+            <li><a href="artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html">Animais</a></li>
+            <li><a href="artigos/geografia/os-lugares-mais-extremos-do-planeta.html">Geografia</a></li>
+            <li><a href="artigos/por-que/por-que-sentimos-arrepios.html">Por que acontece?</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="curiosidades.html">Todas as Curiosidades</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Ferramentas</h4>
+          <ul class="footer-links">
+            <li><a href="admin/index.html">Painel de Criação</a></li>
+            <li><a href="admin/novo-artigo.html">Gerador de Artigos</a></li>
+            <li><a href="sitemap.xml">Mapa do Site</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-card">
+        <strong>Aviso:</strong> Este site tem finalidade educativa e informativa. As informações são apresentadas para fins de conhecimento geral. Sempre que possível, são indicadas fontes e referências confiáveis. As informações relacionadas ao corpo humano têm finalidade exclusivamente educativa e não substituem orientação médica profissional.
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Curio Mundo. Todos os direitos reservados.</p>
+        <p>Site 100% estático • Rápido, leve e acessível</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre o Curio Mundo | Descubra algo novo todos os dias</title>
+  <meta name="description" content="Conheça o Curio Mundo, uma revista digital independente dedicada a curiosidades, ciência, história, geografia, corpo humano e os mistérios do nosso planeta.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/sobre.html">
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- FAIXA DE TOPO EDITORIAL -->
+  <aside class="top-editorial-bar" aria-label="Informações da edição">
+    <div class="container top-editorial-inner">
+      <div class="top-editorial-left">
+        <span class="edition-label">EDIÇÃO DIÁRIA</span>
+        <span class="edition-sep" aria-hidden="true">·</span>
+        <span id="currentDateDisplay">Sexta-feira, 3 de Outubro de 2026</span>
+        <span class="edition-sep" aria-hidden="true">·</span>
+        <span>Manifesto &amp; Linha Editorial</span>
+      </div>
+      <div>
+        <button type="button" class="top-bar-refresh-btn js-trigger-refresh" title="Atualizar página e carregar novos fatos">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          <span>Atualizar</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="index.html" class="brand-icon-link" aria-label="Curio Mundo - Página Inicial">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Navegação Principal">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="curiosidades.html" class="nav-link">Curiosidades</a></li>
+            <li><a href="categorias.html" class="nav-link">Categorias</a></li>
+            <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar no site">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Buscar</span>
+          <span class="kbd-shortcut" aria-hidden="true">/</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container" style="max-width: 800px;">
+        <span class="section-pretitle">Conheça o Projeto</span>
+        <h1 class="article-title" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">Sobre o Curio Mundo</h1>
+        
+        <div class="article-content" style="max-width: 100%;">
+          <p style="font-size: 1.25rem; font-weight: 600; color: var(--text-main); line-height: 1.6;">
+            O <strong>Curio Mundo</strong> nasceu de uma paixão simples e irresistível: o prazer de descobrir como o mundo funciona e se encantar com as histórias, criaturas e fenômenos que nos cercam.
+          </p>
+
+          <p>
+            Não somos um portal de notícias apressado, nem uma revista acadêmica hermética, nem um site burocrático. Somos uma revista digital feita para quem gosta de aprender algo novo a qualquer momento — no transporte, na pausa do café ou antes de dormir.
+          </p>
+
+          <h2>Nossa Missão</h2>
+          <p>
+            Despertar a curiosidade genuína através de artigos curtos, claros, divertidos e estritamente factuais. Queremos responder tanto àquelas perguntas espontâneas do dia a dia (<em>"Por que o céu é azul?"</em> ou <em>"Por que sentimos arrepios?"</em>) quanto revelar capítulos fascinantes da história, façanhas da engenharia e as adaptações mais inacreditáveis da vida selvagem.
+          </p>
+
+          <h2>O Que Você Encontra Aqui</h2>
+          <ul>
+            <li><strong>História:</strong> Civilizações do passado, origens da escrita, sítios arqueológicos e fatos pouco conhecidos.</li>
+            <li><strong>Ciência &amp; Espaço:</strong> Fenômenos físicos, astronomia, química cotidiana e perguntas instigantes.</li>
+            <li><strong>Geografia:</strong> Lugares extremos, fusos horários, formações naturais raras e maravilhas do relevo.</li>
+            <li><strong>Mundo Animal:</strong> Capacidades extraordinárias, inteligência de polvos, corvos e sobrevivência em climas extremos.</li>
+            <li><strong>Corpo Humano:</strong> O funcionamento dos nossos sentidos, cérebro, reflexos e curiosidades biológicas.</li>
+            <li><strong>Grandes Invenções:</strong> A origem dos objetos do nosso cotidiano, do sabão e do telefone à prensa móvel.</li>
+            <li><strong>Culturas &amp; Países:</strong> Fatos documentados sobre costumes, geografia e peculiaridades de diferentes nações.</li>
+            <li><strong>"Por Que Isso Acontece?":</strong> Nossa editoria especial dedicada a desvendar os mistérios do dia a dia.</li>
+          </ul>
+
+          <h2>Compromisso com a Verdade</h2>
+          <p>
+            Acreditamos que a realidade é mais empolgante do que mitos inventados. Por isso:
+          </p>
+          <ul>
+            <li>Não criamos dados falsos nem estatísticas fabricadas.</li>
+            <li>Não recorremos a manchetes caça-cliques enganosas.</li>
+            <li>Baseamos nossos artigos em pesquisas de instituições respeitadas, universidades, periódicos científicos e arquivos históricos.</li>
+          </ul>
+
+          <div class="callout-box" style="margin-top: 2.5rem;">
+            <div class="callout-title">Aviso Editorial e Educativo</div>
+            <p>
+              Este site tem finalidade estritamente educativa e informativa. As informações são apresentadas para fins de conhecimento geral e cultura. As informações relacionadas ao corpo humano e saúde não constituem nem substituem aconselhamento médico ou diagnóstico profissional.
+            </p>
+          </div>
+
+          <div style="margin-top: 3rem; text-align: center;">
+            <a href="curiosidades.html" class="btn btn-primary">Começar a Explorar &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="imagens/logo.svg" alt="Curio Mundo" style="height: 38px; margin-bottom: 1.25rem; filter: brightness(0) invert(1);">
+          <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 1rem;">
+            Revista digital dedicada a curiosidades, ciência, história, geografia e fatos fascinantes sobre o planeta Terra.
+          </p>
+          <p style="font-size: 0.85rem; color: #71717a; font-style: italic;">
+            "Descubra algo novo todos os dias."
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Coleções</h4>
+          <ul class="footer-links">
+            <li><a href="artigos/ciencia/por-que-o-ceu-e-azul.html">Ciência</a></li>
+            <li><a href="artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html">História</a></li>
+            <li><a href="artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html">Animais</a></li>
+            <li><a href="artigos/geografia/os-lugares-mais-extremos-do-planeta.html">Geografia</a></li>
+            <li><a href="artigos/por-que/por-que-sentimos-arrepios.html">Por que acontece?</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="curiosidades.html">Todas as Curiosidades</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Ferramentas</h4>
+          <ul class="footer-links">
+            <li><a href="admin/index.html">Painel de Criação</a></li>
+            <li><a href="admin/novo-artigo.html">Gerador de Artigos</a></li>
+            <li><a href="sitemap.xml">Mapa do Site</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-card">
+        <strong>Aviso:</strong> Este site tem finalidade educativa e informativa. As informações são apresentadas para fins de conhecimento geral. Sempre que possível, são indicadas fontes e referências confiáveis. As informações relacionadas ao corpo humano têm finalidade exclusivamente educativa e não substituem orientação médica profissional.
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Curio Mundo. Todos os direitos reservados.</p>
+        <p>Site 100% estático • Rápido, leve e acessível</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

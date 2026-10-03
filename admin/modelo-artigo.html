@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo Base de Artigo | Curio Mundo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../imagens/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-link">
+        <img src="../imagens/logo.svg" alt="Curio Mundo" class="brand-logo-img" width="220" height="48">
+      </a>
+      <div class="header-actions">
+        <a href="novo-artigo.html" class="btn btn-primary btn-sm">Abrir Gerador</a>
+        <a href="index.html" class="btn btn-secondary btn-sm">Painel</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 860px;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem;">
+          <h1 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem;">Modelo Estrutural de Artigo HTML</h1>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+            Abaixo está a estrutura semântica padrão utilizada em todos os artigos do Curio Mundo. Você pode copiar este código como ponto de partida caso queira escrever seu HTML manualmente.
+          </p>
+
+          <pre style="background: #0f172a; color: #f8fafc; padding: 1.5rem; border-radius: var(--radius-md); overflow-x: auto; font-size: 0.85rem; line-height: 1.5;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;[TÍTULO DO ARTIGO] | Curio Mundo&lt;/title&gt;
+  &lt;meta name="description" content="[RESUMO CONCISO DE ATÉ 160 CARACTERES]"&gt;
+  &lt;link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg"&gt;
+  &lt;link rel="stylesheet" href="../../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- HEADER --&gt;
+  &lt;header class="site-header"&gt;
+    &lt;div class="container header-inner"&gt;
+      &lt;a href="../../index.html" class="brand-link"&gt;
+        &lt;img src="../../imagens/logo.svg" alt="Curio Mundo" class="brand-logo-img" width="220" height="48"&gt;
+      &lt;/a&gt;
+      &lt;div class="header-actions"&gt;
+        &lt;button type="button" class="btn-search-trigger js-open-search"&gt;Pesquisar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;!-- CONTEÚDO PRINCIPAL --&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;header class="article-header"&gt;
+        &lt;div class="container" style="max-width: 760px;"&gt;
+          &lt;div class="article-breadcrumbs"&gt;
+            &lt;a href="../../index.html"&gt;Início&lt;/a&gt; / &lt;a href="../../curiosidades.html"&gt;Curiosidades&lt;/a&gt; / &lt;span&gt;[CATEGORIA]&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="article-meta-top"&gt;
+            &lt;span class="badge badge-[CATEGORIA-SLUG]"&gt;[CATEGORIA]&lt;/span&gt;
+            &lt;time datetime="2026-10-03"&gt;[DATA]&lt;/time&gt;
+            &lt;span&gt;• 5 min de leitura&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;h1 class="article-title"&gt;[TÍTULO DO ARTIGO]&lt;/h1&gt;
+          &lt;p class="article-subtitle"&gt;[SUBTÍTULO EXPLICATIVO]&lt;/p&gt;
+          &lt;div class="article-author-bar"&gt;
+            &lt;span&gt;Por &lt;strong&gt;[NOME DO AUTOR]&lt;/strong&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+
+      &lt;div class="container article-layout"&gt;
+        &lt;div class="article-content"&gt;
+          &lt;p&gt;[PARÁGRAFO DE INTRODUÇÃO]&lt;/p&gt;
+
+          &lt;!-- BOX VOCÊ SABIA --&gt;
+          &lt;div class="callout-box"&gt;
+            &lt;div class="callout-title"&gt;💡 Você sabia?&lt;/div&gt;
+            &lt;p class="callout-text"&gt;[FATO CURIOSO EM DESTAQUE]&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;h2&gt;[SUBTÍTULO 1]&lt;/h2&gt;
+          &lt;p&gt;[DESENVOLVIMENTO DO TEMA]&lt;/p&gt;
+
+          &lt;h2&gt;[SUBTÍTULO 2]&lt;/h2&gt;
+          &lt;p&gt;[EXPLICAÇÃO DETALHADA COM FATOS]&lt;/p&gt;
+
+          &lt;h2&gt;Conclusão&lt;/h2&gt;
+          &lt;p&gt;[FECHAMENTO DO ARTIGO]&lt;/p&gt;
+
+          &lt;!-- FONTES E REFERÊNCIAS --&gt;
+          &lt;section class="sources-section"&gt;
+            &lt;h3 class="sources-title"&gt;Fontes e referências verificadas:&lt;/h3&gt;
+            &lt;ul class="sources-list"&gt;
+              &lt;li&gt;&lt;strong&gt;Instituição Científica:&lt;/strong&gt; Nome do Estudo ou Artigo&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/section&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+
+  &lt;!-- RODAPÉ PADRÃO --&gt;
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container footer-bottom"&gt;
+      &lt;p&gt;&amp;copy; 2026 Curio Mundo. Descubra algo novo todos os dias.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+
+  &lt;script src="../../js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

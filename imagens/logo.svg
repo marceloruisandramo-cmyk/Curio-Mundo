@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60" fill="none">
+  <!-- Planet & Curiosity Spark Icon -->
+  <g transform="translate(4, 6)">
+    <!-- Globe Circle with Discovery Rings -->
+    <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+    <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+    <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Spark / Compass Star -->
+    <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+    <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+  </g>
+
+  <!-- Typography: CURIO MUNDO -->
+  <text x="62" y="33" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="24" letter-spacing="1" fill="#0f172a">
+    CURIO<tspan fill="#0d9488">MUNDO</tspan>
+  </text>
+  <text x="63" y="47" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9.5" letter-spacing="2" fill="#64748b">
+    DESCUBRA ALGO NOVO
+  </text>
+</svg>

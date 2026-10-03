@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Por que temos impressões digitais? | Curio Mundo</title>
+  <meta name="description" content="Descubra a função biológica dos dermatoglifos: muito além da identificação biométrica, as cristas nas pontas dos dedos aumentam a aderência e amplificam a nossa sensibilidade tátil.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/artigos/corpo-humano/por-que-temos-impressoes-digitais.html">
+  <link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+            <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span style="display: none; @media(min-width:480px){display:inline;}">Pesquisar</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../../curiosidades.html" class="nav-link">Curiosidades</a></li>
+          <li><a href="../../categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="../historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="nav-link">História</a></li>
+          <li><a href="../ciencia/por-que-o-ceu-e-azul.html" class="nav-link">Ciência</a></li>
+          <li><a href="../geografia/os-lugares-mais-extremos-do-planeta.html" class="nav-link">Geografia</a></li>
+          <li><a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="nav-link">Animais</a></li>
+          <li><a href="por-que-temos-impressoes-digitais.html" class="nav-link active">Corpo Humano</a></li>
+          <li><a href="../invencoes/10-invencoes-que-mudaram-o-mundo.html" class="nav-link">Invenções</a></li>
+          <li><a href="../paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="nav-link">Países</a></li>
+          <li><a href="../por-que/por-que-sentimos-arrepios.html" class="nav-link">Por que isso acontece?</a></li>
+          <li><a href="../../sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container" style="max-width: 760px;">
+          <div class="article-breadcrumbs">
+            <a href="../../index.html">Início</a> / <a href="../../curiosidades.html">Curiosidades</a> / <a href="../../categorias.html">Corpo Humano</a>
+          </div>
+          <div class="article-meta-top">
+            <span class="badge badge-corpo">Corpo Humano</span>
+            <time datetime="2026-09-28">28 de setembro de 2026</time>
+            <span>• 4 min de leitura</span>
+          </div>
+          <h1 class="article-title">Por que temos impressões digitais?</h1>
+          <p class="article-subtitle">As pequenas ranhuras e espirais na polpa dos nossos dedos não surgiram para desbloquear celulares ou carimbar documentos. Elas são sofisticadas ferramentas mecânicas desenvolvidas ao longo de milhões de anos de evolução primata.</p>
+          <div class="article-author-bar">
+            <span>Por <strong>Redação Curio Mundo</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-layout">
+        <div class="article-content">
+          <p>
+            Cientificamente chamadas de <strong>dermatoglifos</strong> (do grego <em>derma</em>, pele, e <em>glyphe</em>, gravação), as impressões digitais são cristas de atrito presentes na pele das mãos e dos pés de primatas e de alguns poucos outros mamíferos arborícolas.
+          </p>
+
+          <!-- BOX VOCÊ SABIA -->
+          <div class="callout-box">
+            <div class="callout-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Você sabia?
+            </div>
+            <p class="callout-text">
+              Gêmeos idênticos (univitelinos) compartilham exatamente o mesmo DNA, mas possuem impressões digitais diferentes! Isso porque o desenho final das cristas é moldado no útero pelo fluxo do líquido amniótico e pela pressão física dos dedos contra a parede uterina.
+            </p>
+          </div>
+
+          <h2>1. Canaletas de aderência: como pneus de corrida na chuva</h2>
+          <p>
+            A primeira grande função evolutiva é a aderência mecânica. Nossas mãos produzem suor constantemente para manter a pele hidratada. Se as pontas dos dedos fossem perfeitamente lisas, uma fina camada de suor criaria o fenômeno de aquaplanagem, fazendo com que galhos, frutas ou pedras escorregassem de nossas mãos.
+          </p>
+          <p>
+            Os vales entre as cristas das impressões digitais funcionam exatamente como os sulcos dos pneus de um carro: eles escoam o excesso de umidade e permitem que o topo das cristas faça contato firme com a superfície do objeto.
+          </p>
+
+          <h2>2. Um amplificador biológico de vibrações táteis</h2>
+          <p>
+            A segunda função — comprovada por experimentos de física e neurobiologia na França — é a <strong>amplificação tátil</strong>.
+          </p>
+          <p>
+            Quando você desliza a ponta do dedo sobre uma superfície (como um tecido de algodão, uma madeira rústica ou uma folha de papel), o atrito das cristas com as irregularidades microscópicas do material produz vibrações mecânicas de frequências muito específicas (por volta de 200 a 250 Hz).
+          </p>
+          <p>
+            As cristas dérmicas filtram e amplificam essas microvibrações em até 100 vezes, direcionando-as com precisão para os corpúsculos de Pacini e células de Merkel situadas nas camadas profundas da pele. É isso que nos permite distinguir a textura de um fio de seda de um fio de lã com os olhos fechados.
+          </p>
+
+          <h2>Outros animais que também possuem digitais</h2>
+          <p>
+            Além dos humanos e grandes primatas (como chimpanzés e gorilas), os <strong>coalas</strong> na Austrália desenvolveram impressões digitais tão semelhantes às humanas que até mesmo cientistas forenses experientes têm dificuldade em distingui-las ao microscópio eletrônico. Trata-se de um clássico exemplo de evolução convergente: ambos precisaram de garras e dedos capazes de segurar com firmeza galhos lisos de eucalipto.
+          </p>
+
+          <!-- AVISO EDUCATIVO -->
+          <div class="health-disclaimer">
+            <strong>Aviso Educativo:</strong> As informações anatômicas deste artigo têm finalidade didática e de divulgação científica, não constituindo diagnóstico médico ou orientação dermatológica.
+          </div>
+
+          <section class="sources-section">
+            <h3 class="sources-title">Fontes e referências consultadas:</h3>
+            <ul class="sources-list">
+              <li><strong>Science:</strong> "The role of fingerprints in tactile texture perception" (Scheibert et al.).</li>
+              <li><strong>PNAS (Proceedings of the National Academy of Sciences):</strong> Development of human friction ridges and dermatoglyphics.</li>
+              <li><strong>Journal of Anatomy:</strong> Evolutionary morphology of primate dermatoglyphs and arboreal locomotion.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTIGOS RELACIONADOS -->
+    <section class="related-section">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem;">Você também pode gostar de descobrir:</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-corpo">Corpo Humano</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="por-que-bocejamos.html">Por que bocejamos?</a></h3>
+              <p class="article-card-excerpt">A hipótese do resfriamento do cérebro e o contágio social.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="por-que-bocejamos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-porque">Por que isso acontece?</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../por-que/por-que-sentimos-arrepios.html">Por que sentimos arrepios?</a></h3>
+              <p class="article-card-excerpt">O reflexo vestigial da piloereção contra o frio e em momentos de emoção.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../por-que/por-que-sentimos-arrepios.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-historia">História</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../historia/como-eram-os-primeiros-sistemas-de-escrita.html">Os primeiros sistemas de escrita</a></h3>
+              <p class="article-card-excerpt">A evolução das primeiras marcas na argila até a escrita cuneiforme.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../historia/como-eram-os-primeiros-sistemas-de-escrita.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo. Descubra algo novo todos os dias.</p>
+      <a href="../../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

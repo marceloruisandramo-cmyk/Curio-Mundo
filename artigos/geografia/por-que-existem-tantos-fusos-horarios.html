@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Por que existem tantos fusos horários? | Curio Mundo</title>
+  <meta name="description" content="Descubra a história dos fusos horários: como a rotação da Terra e o avanço das ferrovias no século XIX forçaram a criação do Meridiano de Greenwich e dos horários padronizados.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/artigos/geografia/por-que-existem-tantos-fusos-horarios.html">
+  <link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+            <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span style="display: none; @media(min-width:480px){display:inline;}">Pesquisar</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../../curiosidades.html" class="nav-link">Curiosidades</a></li>
+          <li><a href="../../categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="../historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="nav-link">História</a></li>
+          <li><a href="../ciencia/por-que-o-ceu-e-azul.html" class="nav-link">Ciência</a></li>
+          <li><a href="os-lugares-mais-extremos-do-planeta.html" class="nav-link active">Geografia</a></li>
+          <li><a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="nav-link">Animais</a></li>
+          <li><a href="../corpo-humano/por-que-bocejamos.html" class="nav-link">Corpo Humano</a></li>
+          <li><a href="../invencoes/10-invencoes-que-mudaram-o-mundo.html" class="nav-link">Invenções</a></li>
+          <li><a href="../paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="nav-link">Países</a></li>
+          <li><a href="../por-que/por-que-sentimos-arrepios.html" class="nav-link">Por que isso acontece?</a></li>
+          <li><a href="../../sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container" style="max-width: 760px;">
+          <div class="article-breadcrumbs">
+            <a href="../../index.html">Início</a> / <a href="../../curiosidades.html">Curiosidades</a> / <a href="../../categorias.html">Geografia</a>
+          </div>
+          <div class="article-meta-top">
+            <span class="badge badge-geografia">Geografia</span>
+            <time datetime="2026-09-30">30 de setembro de 2026</time>
+            <span>• 4 min de leitura</span>
+          </div>
+          <h1 class="article-title">Por que existem tantos fusos horários?</h1>
+          <p class="article-subtitle">Até o final do século XIX, cada cidade do mundo regulava o relógio da igreja pelo meio-dia solar local. Foi a revolução das ferrovias que obrigou a humanidade a fatiar o planeta em 24 faixas horárias.</p>
+          <div class="article-author-bar">
+            <span>Por <strong>Redação Curio Mundo</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-layout">
+        <div class="article-content">
+          <p>
+            Hoje achamos perfeitamente natural que o relógio mude exatamente uma hora quando cruzamos certas fronteiras estaduais ou nacionais. No entanto, o conceito de fuso horário padronizado tem pouco mais de 140 anos e resultou de uma gigantesca negociação geopolítica entre nações.
+          </p>
+
+          <!-- BOX VOCÊ SABIA -->
+          <div class="callout-box">
+            <div class="callout-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Você sabia?
+            </div>
+            <p class="callout-text">
+              A China é geograficamente tão larga que abrange cinco fusos horários naturais. Porém, desde 1949, o governo estabeleceu uma hora oficial única para todo o território (Horário de Pequim, UTC+8). Por isso, no extremo oeste chinês (em Xinjiang), o sol pode nascer às 10 horas da manhã no inverno!
+            </p>
+          </div>
+
+          <h2>A matemática da rotação da Terra</h2>
+          <p>
+            O planeta Terra tem o formato aproximado de uma esfera (360 graus de circunferência) e completa uma rotação em torno do seu próprio eixo em aproximadamente 24 horas.
+          </p>
+          <p>
+            Fazendo uma divisão matemática simples:
+          </p>
+          <div style="background: var(--surface-alt); padding: 1rem; border-radius: var(--radius-sm); font-weight: 700; text-align: center; margin-bottom: 1.5rem;">
+            360 graus ÷ 24 horas = 15 graus de longitude por hora
+          </div>
+          <p>
+            Isso significa que, a cada 15 graus de distância para o leste ou para o oeste, o meio-dia solar (o instante em que o Sol atinge o ponto mais alto no céu) varia em exatos 60 minutos.
+          </p>
+
+          <h2>O caos ferroviário que exigiu a padronização</h2>
+          <p>
+            Antes da década de 1880, se você viajasse a cavalo ou de carruagem, a diferença de minutos entre duas vilas vizinhas não fazia muita diferença. Mas quando as locomotivas a vapor começaram a cruzar continentes em alta velocidade, o sistema colapsou.
+          </p>
+          <p>
+            Somente nos Estados Unidos, existiam mais de 300 horários locais diferentes ao longo das rotas férreas. Estações centrais precisavam manter colunas com dezenas de relógios diferentes nas paredes para indicar a hora de cada companhia ferroviária, causando atrasos monumentais e desastres graves com colisões frontais de trens.
+          </p>
+
+          <h2>A Conferência de Washington de 1884</h2>
+          <p>
+            Liderados pelas propostas do engenheiro canadense Sir Sandford Fleming, representantes de 25 países reuniram-se em Washington em outubro de 1884 na Conferência Internacional do Meridiano.
+          </p>
+          <p>
+            Ficou acordado que o Meridiano de Greenwich, em Londres (no Observatório Real britânico), seria adotado como o ponto zero universal de longitude e referência de tempo (GMT, hoje coordenado como UTC). A partir dele, o mundo foi dividido em 24 faixas primárias de 15 graus cada.
+          </p>
+
+          <h2>Exceções curiosas pelo mundo</h2>
+          <p>
+            Nem todos os países utilizam fusos com saltos exatos de 60 minutos:
+          </p>
+          <ul>
+            <li><strong>Índia:</strong> Adota um único fuso com meia hora de diferença: UTC+5:30.</li>
+            <li><strong>Nepal:</strong> Possui uma das raras diferenças de 45 minutos: UTC+5:45.</li>
+            <li><strong>Kiribati:</strong> Na Micronésia, o país alterou a Linha Internacional de Mudança de Data em 1994, criando as zonas UTC+13 e UTC+14 para que todas as suas ilhas pudessem comemorar o mesmo dia da semana simultaneamente.</li>
+          </ul>
+
+          <section class="sources-section">
+            <h3 class="sources-title">Fontes e referências consultadas:</h3>
+            <ul class="sources-list">
+              <li><strong>Royal Observatory Greenwich:</strong> "The History of Greenwich Mean Time and the 1884 Conference".</li>
+              <li><strong>US Naval Observatory:</strong> Systems of Time and Astronomical Ephemerides.</li>
+              <li><strong>International Earth Rotation and Reference Systems Service (IERS):</strong> Coordinated Universal Time (UTC) Standards.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTIGOS RELACIONADOS -->
+    <section class="related-section">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem;">Você também pode gostar de descobrir:</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-geografia">Geografia</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="os-lugares-mais-extremos-do-planeta.html">Os lugares mais extremos do planeta</a></h3>
+              <p class="article-card-excerpt">Conheça o Atacama, a Fossa das Marianas e a fria Antártida.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="os-lugares-mais-extremos-do-planeta.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-invencoes">Invenções</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../invencoes/como-surgiu-o-primeiro-telefone.html">Como surgiu o primeiro telefone?</a></h3>
+              <p class="article-card-excerpt">A história das telecomunicações e a revolução da voz à distância.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../invencoes/como-surgiu-o-primeiro-telefone.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-paises">Países</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html">Curiosidades sobre o Japão</a></h3>
+              <p class="article-card-excerpt">A pontualidade dos trens e a vida na terra do sol nascente.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo. Descubra algo novo todos os dias.</p>
+      <a href="../../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

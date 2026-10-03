@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 invenções que mudaram a vida cotidiana | Curio Mundo</title>
+  <meta name="description" content="Da prensa de tipos móveis e do sabão ao transistor e à anestesia: conheça 10 criações humanas fundamentais que transformaram a saúde, o trabalho e a sociedade.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/artigos/invencoes/10-invencoes-que-mudaram-o-mundo.html">
+  <link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+            <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span style="display: none; @media(min-width:480px){display:inline;}">Pesquisar</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../../curiosidades.html" class="nav-link">Curiosidades</a></li>
+          <li><a href="../../categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="../historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="nav-link">História</a></li>
+          <li><a href="../ciencia/por-que-o-ceu-e-azul.html" class="nav-link">Ciência</a></li>
+          <li><a href="../geografia/os-lugares-mais-extremos-do-planeta.html" class="nav-link">Geografia</a></li>
+          <li><a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="nav-link">Animais</a></li>
+          <li><a href="../corpo-humano/por-que-bocejamos.html" class="nav-link">Corpo Humano</a></li>
+          <li><a href="10-invencoes-que-mudaram-o-mundo.html" class="nav-link active">Invenções</a></li>
+          <li><a href="../paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="nav-link">Países</a></li>
+          <li><a href="../por-que/por-que-sentimos-arrepios.html" class="nav-link">Por que isso acontece?</a></li>
+          <li><a href="../../sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container" style="max-width: 760px;">
+          <div class="article-breadcrumbs">
+            <a href="../../index.html">Início</a> / <a href="../../curiosidades.html">Curiosidades</a> / <a href="../../categorias.html">Invenções</a>
+          </div>
+          <div class="article-meta-top">
+            <span class="badge badge-invencoes">Invenções</span>
+            <time datetime="2026-09-27">27 de setembro de 2026</time>
+            <span>• 6 min de leitura</span>
+          </div>
+          <h1 class="article-title">10 invenções que mudaram a vida cotidiana</h1>
+          <p class="article-subtitle">Costumamos prestar atenção aos foguetes e supercomputadores, mas foram criações aparentemente simples — como o sabão, os óculos e a geladeira — que duplicaram a nossa expectativa de vida e remodelaram o mundo.</p>
+          <div class="article-author-bar">
+            <span>Por <strong>Redação Curio Mundo</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-layout">
+        <div class="article-content">
+          <p>
+            A história da tecnologia é frequentemente contada através de saltos gigantescos, mas as verdadeiras revoluções silenciosas foram aquelas que entraram na casa das pessoas comuns, eliminando doenças, preservando alimentos e multiplicando o acesso ao saber.
+          </p>
+
+          <!-- BOX VOCÊ SABIA -->
+          <div class="callout-box">
+            <div class="callout-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Você sabia?
+            </div>
+            <p class="callout-text">
+              A roda não foi inventada originalmente para veículos de transporte! Os registros arqueológicos mais antigos da Mesopotâmia (cerca de 3.500 a.C.) mostram que a roda circular giratória foi usada por oleiros para moldar vasos de argila por quase 300 anos antes de alguém ter a ideia de colocá-la na base de uma carroça com eixos!
+            </p>
+          </div>
+
+          <h2>1. A imprensa de tipos móveis (c. 1440)</h2>
+          <p>
+            O alemão Johannes Gutenberg combinou ligas metálicas resistentes para fundir letras avulsas, tinta à base de óleo e uma prensa de uva adaptada. Antes dele, copiar uma única Bíblia à mão levava até um ano de trabalho de um monge copista. Com a imprensa, milhares de livros puderam ser impressos e distribuídos, permitindo a democratização do conhecimento e o florescimento da Revolução Científica.
+          </p>
+
+          <h2>2. O sabão e o saneamento básico</h2>
+          <p>
+            Embora misturas de gordura e cinzas existissem desde a Babilônia, foi a compreensão científica da teoria dos germes no século XIX (com Ignaz Semmelweis e Louis Pasteur) que transformou o hábito de lavar as mãos e esterilizar ambientes em política pública. Essa simples molécula que dissolve a membrana lipídica de vírus e bactérias salvou mais vidas humanas do que qualquer arma ou remédio na história.
+          </p>
+
+          <h2>3. A refrigeração doméstica</h2>
+          <p>
+            Antes dos refrigeradores elétricos a compressão de vapor no início do século XX, as famílias dependiam de salgar, desidratar ou fumar alimentos para evitar a proliferação bacteriana. O refrigerador eliminou grande parte das intoxicações alimentares letais e permitiu a cadeia global de transporte de alimentos frescos e vacinas.
+          </p>
+
+          <h2>4. As lentes ópticas e os óculos</h2>
+          <p>
+            Inventados no norte da Itália por volta de 1286, os óculos corretivos dobraram a vida útil produtiva de artesãos, médicos, escribas e pensadores, cujas carreiras terminavam precocemente após os 40 anos devido à presbiopia. Além disso, as lentes abriram as portas para a invenção do microscópio (revelando o mundo celular) e do telescópio (revelando os planetas).
+          </p>
+
+          <h2>5. A bússola magnética</h2>
+          <p>
+            Desenvolvida inicialmente na China da dinastia Han para adivinhação geomântica e adaptada para navegação marítima na dinastia Song (século XI), a agulha magnetizada permitiu que marinheiros navegassem em mar aberto mesmo sem estrelas ou pontos de referência na costa, conectando continentes inteiros.
+          </p>
+
+          <h2>6. A penicilina (1928)</h2>
+          <p>
+            A descoberta acidental por Alexander Fleming de que o bolor <em>Penicillium notatum</em> secretava uma substância que dissolvia colônias da bactéria <em>Staphylococcus</em> abriu a era dos antibióticos. Doenças antes fatais, como tuberculose, pneumonia bacteriana e sífilis, passaram a ter cura em poucos dias.
+          </p>
+
+          <h2>7. A máquina a vapor</h2>
+          <p>
+            Ao aperfeiçoar a máquina atmosférica com um condensador separado na década de 1760, James Watt forneceu à humanidade uma fonte contínua de força motriz mecânica independente de rios ou animais de tração, inaugurando a Revolução Industrial e os transportes a vapor.
+          </p>
+
+          <h2>8. O transistor (1947)</h2>
+          <p>
+            Desenvolvido nos laboratórios Bell por John Bardeen, Walter Brattain e William Shockley, o pequeno semicondutor substituiu as volumosas e frágeis válvulas eletrônicas. É o tijolo fundamental de todos os processadores de celulares, computadores e satélites modernos.
+          </p>
+
+          <h2>9. A anestesia cirúrgica</h2>
+          <p>
+            Até meados da década de 1840, cirurgias eram procedimentos de dor excruciante realizados em pacientes amarrados e conscientes. A introdução do éter e do clorofórmio transformou a medicina, permitindo operações complexas, demoradas e salvadoras com precisão milimétrica.
+          </p>
+
+          <h2>10. O concreto armado</h2>
+          <p>
+            A união da resistência à compressão do concreto com a resistência à tração de barras de aço no século XIX permitiu a construção de pontes suspensas, túneis, barragens hidrelétricas e os arranha-céus que definem a paisagem das cidades modernas.
+          </p>
+
+          <section class="sources-section">
+            <h3 class="sources-title">Fontes e referências consultadas:</h3>
+            <ul class="sources-list">
+              <li><strong>Science Museum London:</strong> "Treasures of Invention and Industrial Archaeology".</li>
+              <li><strong>Nobel Prize Archives:</strong> Nobel Prize in Physiology or Medicine 1945 (Penicillin) &amp; Physics 1956 (Transistor).</li>
+              <li><strong>MIT Technology Review:</strong> Historical retrospectives on breakthrough technologies of civilization.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTIGOS RELACIONADOS -->
+    <section class="related-section">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem;">Você também pode gostar de descobrir:</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-invencoes">Invenções</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="como-surgiu-o-primeiro-telefone.html">Como surgiu o primeiro telefone?</a></h3>
+              <p class="article-card-excerpt">A disputa de patentes e as primeiras transmissões de voz por fios elétricos.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="como-surgiu-o-primeiro-telefone.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-historia">História</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../historia/como-eram-os-primeiros-sistemas-de-escrita.html">Os primeiros sistemas de escrita</a></h3>
+              <p class="article-card-excerpt">A contabilidade em barro na Suméria e a revolução da escrita cuneiforme.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../historia/como-eram-os-primeiros-sistemas-de-escrita.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-ciencia">Ciência</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../ciencia/por-que-o-ceu-e-azul.html">Por que o céu é azul?</a></h3>
+              <p class="article-card-excerpt">A física do espalhamento da luz na atmosfera terrestre.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../ciencia/por-que-o-ceu-e-azul.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo. Descubra algo novo todos os dias.</p>
+      <a href="../../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

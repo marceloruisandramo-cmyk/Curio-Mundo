@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Por que sentimos arrepios? | Curio Mundo</title>
+  <meta name="description" content="Entenda a ciência da piloereção: por que os pequenos músculos da nossa pele se contraem quando sentimos frio ou nos emocionamos com uma música inesquecível.">
+  <link rel="canonical" href="https://curiomundo.pages.dev/artigos/por-que/por-que-sentimos-arrepios.html">
+  <link rel="icon" type="image/svg+xml" href="../../imagens/favicon.svg">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+            <!-- Identidade da Marca (com botão de atualização rápida em MUNDO) -->
+      <div class="brand-lockup">
+        <a href="../../index.html" class="brand-icon-link" aria-label="Curio Mundo - Início">
+          <svg class="brand-globe-icon" viewBox="0 0 48 48" width="38" height="38" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="#f0fdf4" stroke="#059669" stroke-width="2.5"/>
+            <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 2" transform="rotate(-25 24 24)"/>
+            <path d="M 12 18 Q 24 10 36 22 Q 28 34 16 32" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 36 6 L 38 13 L 45 15 L 38 17 L 36 24 L 34 17 L 27 15 L 34 13 Z" fill="#f59e0b"/>
+            <circle cx="16" cy="14" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </a>
+        <div class="brand-text-container">
+          <div class="brand-wordmark">
+            <a href="../../index.html" class="brand-curio-text" aria-label="Curio Mundo - Início">CURIO</a>
+            <button type="button" class="brand-mundo-btn js-trigger-refresh" id="btnRefreshMundo" title="Clique em MUNDO para atualizar a página instantaneamente" aria-label="Atualizar página e ver novas curiosidades">
+              <span>MUNDO</span>
+              <svg class="mundo-refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+            </button>
+          </div>
+          <span class="brand-tagline">DESCUBRA ALGO NOVO</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-search-trigger js-open-search" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span style="display: none; @media(min-width:480px){display:inline;}">Pesquisar</span>
+        </button>
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Abrir menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">Início</a></li>
+          <li><a href="../../curiosidades.html" class="nav-link">Curiosidades</a></li>
+          <li><a href="../../categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="../historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html" class="nav-link">História</a></li>
+          <li><a href="../ciencia/por-que-o-ceu-e-azul.html" class="nav-link">Ciência</a></li>
+          <li><a href="../geografia/os-lugares-mais-extremos-do-planeta.html" class="nav-link">Geografia</a></li>
+          <li><a href="../animais/10-curiosidades-surpreendentes-sobre-os-polvos.html" class="nav-link">Animais</a></li>
+          <li><a href="../corpo-humano/por-que-bocejamos.html" class="nav-link">Corpo Humano</a></li>
+          <li><a href="../invencoes/10-invencoes-que-mudaram-o-mundo.html" class="nav-link">Invenções</a></li>
+          <li><a href="../paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html" class="nav-link">Países</a></li>
+          <li><a href="por-que-sentimos-arrepios.html" class="nav-link active">Por que isso acontece?</a></li>
+          <li><a href="../../sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL DE PESQUISA -->
+  <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Pesquise por tema, animal, ciência, história..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Fechar busca">&times;</button>
+      </div>
+      <div class="search-modal-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container" style="max-width: 760px;">
+          <div class="article-breadcrumbs">
+            <a href="../../index.html">Início</a> / <a href="../../curiosidades.html">Curiosidades</a> / <a href="../../categorias.html">Por que isso acontece?</a>
+          </div>
+          <div class="article-meta-top">
+            <span class="badge badge-porque">Por que isso acontece?</span>
+            <time datetime="2026-10-03">03 de outubro de 2026</time>
+            <span>• 4 min de leitura</span>
+          </div>
+          <h1 class="article-title">Por que sentimos arrepios?</h1>
+          <p class="article-subtitle">Seja com um vento gelado no inverno ou ao ouvir o solo de guitarra daquela música inesquecível, a nossa pele se enche de pequenas elevações. Entenda o que a biologia e as emoções têm a ver com isso.</p>
+          <div class="article-author-bar">
+            <span>Por <strong>Redação Curio Mundo</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-layout">
+        <div class="article-content">
+          <p>
+            O arrepio — conhecido no meio médico pelo termo latino <strong>piloereção</strong> ou <em>cutis anserina</em> ("pele de ganso") — é um dos reflexos fisiológicos mais curiosos da espécie humana. Ele é disparado involuntariamente pelo nosso sistema nervoso simpático, sem que tenhamos qualquer controle consciente sobre o processo.
+          </p>
+
+          <!-- BOX VOCÊ SABIA -->
+          <div class="callout-box">
+            <div class="callout-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Você sabia?
+            </div>
+            <p class="callout-text">
+              Para os humanos modernos, o arrepio contra o frio é considerado uma característica vestigial (sem grande utilidade prática), pois perdemos a pelagem densa que nossos ancestrais possuíam. No entanto, os pequenos músculos eretores continuam exatamente no mesmo lugar onde estavam há milhões de anos!
+            </p>
+          </div>
+
+          <h2>Como o arrepio acontece na pele?</h2>
+          <p>
+            Na raiz de cada um dos milhões de pelos que recobrem o nosso corpo existe um microscópico feixe de fibras musculares lisas chamado <strong>músculo eretor do pelo</strong>.
+          </p>
+          <p>
+            Quando o corpo detecta uma queda súbita de temperatura ou uma forte descarga emocional, os neurônios do sistema nervoso autônomo liberam adrenalina e noradrenalina. Esses neurotransmissores fazem com que todos esses pequenos músculos se contraiam simultaneamente.
+          </p>
+          <p>
+            A contração puxa o folículo para cima, fazendo o pelo ficar ereto e criando uma pequena protuberância circular na superfície da pele: a conhecida pele arrepiada.
+          </p>
+
+          <h2>A função original: isolamento térmico e defesa</h2>
+          <p>
+            Em animais com pelagem abundante (como cães, gatos, chimpanzés e ursos), a piloereção cumpre duas missões biológicas essenciais:
+          </p>
+          <ul>
+            <li><strong>Criar um cobertor de ar:</strong> Quando todos os pelos ficam em pé, eles aprisionam uma camada espessa de ar quente junto à pele, funcionando como um isolante térmico contra o vento gélido.</li>
+            <li><strong>Parecer maior diante de ameaças:</strong> Diante de um predador ou rival, o animal infla toda a sua pelagem (como um gato assustado com o lombo arqueado), transmitindo a ilusão visual de ser muito maior e mais perigoso do que realmente é.</li>
+          </ul>
+
+          <h2>E por que nos arrepiamos com música ou filmes?</h2>
+          <p>
+            O arrepio provocado por emoções estéticas intensas é conhecido na neurociência pelo termo francês <em>frisson</em> ("calafrio estético").
+          </p>
+          <p>
+            Pesquisas com imagens cerebrais mostram que momentos de clímax musical — uma mudança harmônica inesperada, a entrada triunfal de uma orquestra ou uma voz comovente — ativam a amígdala e liberam dopamina no <strong>núcleo accumbens</strong>, o centro de recompensa do cérebro.
+          </p>
+          <p>
+            O cérebro interpreta essa comoção profunda como um evento de alta intensidade e responde disparando o mesmo reflexo ancestral de adrenalina que usaria em momentos de alerta máximo, gerando aquela sensação deliciosa de arrepio pelos braços e nuca.
+          </p>
+
+          <section class="sources-section">
+            <h3 class="sources-title">Fontes e referências consultadas:</h3>
+            <ul class="sources-list">
+              <li><strong>Nature Neuroscience:</strong> "Anatomical and physiological substrates of musical frisson and emotional goosebumps".</li>
+              <li><strong>Harvard Stem Cell Institute:</strong> Neural regulation of the hair follicle and arrector pili muscles.</li>
+              <li><strong>Journal of Cognitive Neuroscience:</strong> The psychophysiology of aesthetic chills and awe.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTIGOS RELACIONADOS -->
+    <section class="related-section">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem;">Você também pode gostar de descobrir:</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-porque">Por que isso acontece?</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="por-que-o-gelo-flutua-na-agua.html">Por que o gelo flutua na água?</a></h3>
+              <p class="article-card-excerpt">A anomalia molecular da água sólida que protege oceanos e lagos.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="por-que-o-gelo-flutua-na-agua.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-corpo">Corpo Humano</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../corpo-humano/por-que-bocejamos.html">Por que bocejamos?</a></h3>
+              <p class="article-card-excerpt">A hipótese do resfriamento cerebral e o contágio social.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../corpo-humano/por-que-bocejamos.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-header">
+              <span class="badge badge-ciencia">Ciência</span>
+            </div>
+            <div class="article-card-body">
+              <h3 class="article-card-title"><a href="../ciencia/por-que-o-ceu-e-azul.html">Por que o céu é azul?</a></h3>
+              <p class="article-card-excerpt">O espalhamento de luz solar na atmosfera da Terra.</p>
+            </div>
+            <div class="article-card-footer">
+              <a href="../ciencia/por-que-o-ceu-e-azul.html" class="article-card-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Curio Mundo. Descubra algo novo todos os dias.</p>
+      <a href="../../index.html" style="color: var(--primary);">Voltar à Página Inicial</a>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

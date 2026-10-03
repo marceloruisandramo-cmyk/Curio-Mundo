@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Páginas Principais -->
+  <url>
+    <loc>https://curiomundo.pages.dev/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/curiosidades.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/categorias.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/sobre.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/contacto.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Artigos - História -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/historia/7-cidades-antigas-que-ainda-despertam-curiosidade.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/historia/como-eram-os-primeiros-sistemas-de-escrita.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Ciência -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/ciencia/por-que-o-ceu-e-azul.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/ciencia/o-que-aconteceria-se-a-lua-desaparecesse.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Geografia -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/geografia/os-lugares-mais-extremos-do-planeta.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/geografia/por-que-existem-tantos-fusos-horarios.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Animais -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/animais/10-curiosidades-surpreendentes-sobre-os-polvos.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/animais/como-alguns-animais-conseguem-sobreviver-em-ambientes-extremos.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Corpo Humano -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/corpo-humano/por-que-bocejamos.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/corpo-humano/por-que-temos-impressoes-digitais.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Invenções -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/invencoes/como-surgiu-o-primeiro-telefone.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/invencoes/10-invencoes-que-mudaram-o-mundo.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Países -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/paises/curiosidades-sobre-o-japao-que-talvez-voce-nao-conheca.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/paises/fatos-interessantes-sobre-mocambique.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos - Por que isso acontece? -->
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/por-que/por-que-sentimos-arrepios.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiomundo.pages.dev/artigos/por-que/por-que-o-gelo-flutua-na-agua.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
